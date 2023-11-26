@@ -12,7 +12,7 @@ to include css into your main.jsx code
 npm install bootstrap@5.3.2
 import "bootstrap/dist/css/bootstrap.min.css";
 
-using array.map() function
+.using array.map() function
 
 {foodItem.map((food, key) => {
                 return (
@@ -25,3 +25,41 @@ using array.map() function
                   </a>
                 );
               })}
+
+.using props
+
+<Item
+	key={food}
+        foodItem={{ food, key }}
+	author={{ person: "Nirmal Kumar" }}/>
+
+const Item = (props) => {
+  const { foodItem, author } = props;
+  return (
+    <>
+      <a href="#" className="list-group-item list-group-item-action">
+        {foodItem.food + "-" + foodItem.key + "-" + author.person}
+      </a>
+    </>
+  );
+};
+
+<NotFound foodData={foodItem} title="No Data Found" />
+
+
+const NotFound = (props) => {
+  return (
+    <>
+      {props.foodData.length === 0 && (
+        <center>
+          <img
+            src="https://img.freepik.com/free-vector/traffic-sign-page-404-found-flat-illustration_80328-232.jpg?size=626&ext=jpg&ga=GA1.1.339697918.1670864008&semt=sph"
+            className="img-fluid"
+            alt="..."
+          ></img>
+          <h2>{props.title}</h2>
+        </center>
+      )}
+    </>
+  );
+};
