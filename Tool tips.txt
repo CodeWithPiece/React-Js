@@ -13,7 +13,6 @@ npm install bootstrap@5.3.2
 import "bootstrap/dist/css/bootstrap.min.css";
 
 .using array.map() function
-
 {foodItem.map((food, key) => {
                 return (
                   <a
@@ -27,7 +26,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
               })}
 
 .using props
-
 <Item
 	key={food}
         foodItem={{ food, key }}
@@ -45,8 +43,6 @@ const Item = (props) => {
 };
 
 <NotFound foodData={foodItem} title="No Data Found" />
-
-
 const NotFound = (props) => {
   return (
     <>
@@ -63,3 +59,13 @@ const NotFound = (props) => {
     </>
   );
 };
+
+.using css at component end (component specific style, unique class name, modular and maintainable css, avoid global conflict, can be used with global css when needed)
+create MyComp.module.css
+.my-h1{
+  color: green;
+  font-weight: 700;
+}
+import style from "../style/MyComp.module.css";
+className={`${style["my-h1"]} text-uppercase fs-6 text-center`}
+
