@@ -1,0 +1,13 @@
+Steps to create react app
+1. npm create vite@latest
+2. Add project name
+3. Select project framework
+4. cd project name
+5. npm install to install packages/ node module
+6. npm run dev
+
+You are all good to go.
+
+to include css into your main.jsx code 
+npm install bootstrap@5.3.2
+import "bootstrap/dist/css/bootstrap.min.css";
