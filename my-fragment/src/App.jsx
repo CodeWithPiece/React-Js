@@ -1,4 +1,5 @@
 import "./App.css";
+import NotFound from "./components/NotFound";
 
 function App() {
   let foodItem = [
@@ -10,6 +11,8 @@ function App() {
     "Vitamins",
   ];
 
+  let noFood = foodItem.length === 0 ? <NotFound /> : null;
+
   return (
     <>
       <div className="container">
@@ -20,12 +23,13 @@ function App() {
         </div>
         <div className="row justify-content-center">
           <div className="col-11 col-md-8">
+            {noFood}
             <div className="list-group">
               {foodItem.map((food, key) => {
                 return (
                   <a
                     href="#"
-                    className="list-group-item list-group-item-action"
+                    className="list-group-item list-group-item-action list-group-item-info"
                     key={key}
                   >
                     {food + "-" + key}
