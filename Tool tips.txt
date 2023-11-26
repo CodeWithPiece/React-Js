@@ -11,3 +11,17 @@ You are all good to go.
 to include css into your main.jsx code 
 npm install bootstrap@5.3.2
 import "bootstrap/dist/css/bootstrap.min.css";
+
+using array.map() function
+
+{foodItem.map((food, key) => {
+                return (
+                  <a
+                    href="#"
+                    className="list-group-item list-group-item-action"
+                    key={key}
+                  >
+                    {food + "-" + key}
+                  </a>
+                );
+              })}

@@ -1,6 +1,15 @@
 import "./App.css";
 
 function App() {
+  let foodItem = [
+    "Rice",
+    "Dal",
+    "Salad",
+    "Green Vegetables",
+    "Fruits",
+    "Vitamins",
+  ];
+
   return (
     <>
       <div className="container">
@@ -11,59 +20,18 @@ function App() {
         </div>
         <div className="row justify-content-center">
           <div className="col-11 col-md-8">
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action">
-                A simple default list group item
-              </a>
-
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-primary"
-              >
-                A simple primary list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-secondary"
-              >
-                A simple secondary list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-success"
-              >
-                A simple success list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-danger"
-              >
-                A simple danger list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-warning"
-              >
-                A simple warning list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-info"
-              >
-                A simple info list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-light"
-              >
-                A simple light list group item
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action list-group-item-dark"
-              >
-                A simple dark list group item
-              </a>
+            <div className="list-group">
+              {foodItem.map((food, key) => {
+                return (
+                  <a
+                    href="#"
+                    className="list-group-item list-group-item-action"
+                    key={key}
+                  >
+                    {food + "-" + key}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
