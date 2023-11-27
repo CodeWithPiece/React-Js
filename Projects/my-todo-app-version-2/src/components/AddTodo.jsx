@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/AddTodo.css";
+import css from "../style/AddTodo.module.css";
 
 const AddTodo = () => {
   return (
@@ -14,7 +14,7 @@ const AddTodo = () => {
       <div className="col-6 col-md-3">
         <input type="date" className="form-control p-2" />
       </div>
-      <div className="col-12 col-md-2 b1">
+      <div className={`${css.b1} col-12 col-md-2`}>
         <div className="d-grid">
           <button className="btn btn-success" type="button">
             Add Todo
