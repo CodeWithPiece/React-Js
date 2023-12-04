@@ -1,35 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import style from "./App.module.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className={style.container}>
+        <div className={style.calculator}>
+          <h1>250</h1>
+          <input type="text" className={style.display} />
+          <div className={style.buttonContainer}>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              AC
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              del
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              %
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              /
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              7
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              8
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              9
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              x
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              4
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              5
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              6
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              -
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              1
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              2
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              3
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              +
+            </button>
+            <button
+              type="button"
+              className={`${style.button} ${style.button0} btn btn-primary`}
+            >
+              0
+            </button>
+            <button type="button" className={`${style.button} btn btn-primary`}>
+              .
+            </button>
+            <button type="button" className={`${style.button} btn btn-warning`}>
+              =
+            </button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
