@@ -1,12 +1,14 @@
 import React from "react";
 import Item from "./Item";
+import FoodInput from "./FoodInput";
 
 const FoodItem = (props) => {
   let foodItem = props.foodData;
   return (
     <>
-      <div className="row justify-content-center">
-        <div className="col-11 col-md-8">
+      <div className="row justify-content-center align-items-center">
+        <FoodInput/>
+        <div className="col-11 col-md-8 mt-3">
           <ul className="list-group">
             {foodItem.map((food, key) => {
               return (

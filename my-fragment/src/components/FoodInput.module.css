@@ -1,0 +1,12 @@
+.foodInput{
+    width: 100%;
+    padding: 6px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px){
+    .button{
+        margin-top: 10px !important;
+    }
+}

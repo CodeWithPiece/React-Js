@@ -3,8 +3,9 @@ import style from "./Item.module.css";
 
 const Item = (props) => {
   const { foodItem, author } = props;
-  function clickMe(food) {
+  function clickMe(food, event) {
     console.log(`${food} is being bought`);
+    console.log(event);
   }
   return (
     <>
@@ -13,8 +14,8 @@ const Item = (props) => {
         <button
           type="button"
           className={`${style.button} btn btn-success`}
-          onClick={() => {
-            clickMe(foodItem.food);
+          onClick={(event) => {
+            clickMe(foodItem.food, event);
           }}
         >
           Buy

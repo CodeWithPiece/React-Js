@@ -70,10 +70,10 @@ import style from "../style/MyComp.module.css";
 className={`${style["my-h1"]} text-uppercase fs-6 text-center`}
 
 . Handle click
-onClick={() => {
-            clickMe(foodItem.food);
+onClick={(event) => {
+            clickMe(foodItem.food, event);
           }}
-function clickMe(food) {
+function clickMe(food, event) {
     console.log(`${food} is being bought`);
   }
 
