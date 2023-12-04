@@ -7,7 +7,7 @@ const FoodItem = (props) => {
     <>
       <div className="row justify-content-center">
         <div className="col-11 col-md-8">
-          <div className="list-group">
+          <ul className="list-group">
             {foodItem.map((food, key) => {
               return (
                 <Item
@@ -17,7 +17,7 @@ const FoodItem = (props) => {
                 />
               );
             })}
-          </div>
+          </ul>
         </div>
       </div>
     </>

@@ -4,9 +4,9 @@ const Item = (props) => {
   const { foodItem, author } = props;
   return (
     <>
-      <a href="#" className="list-group-item list-group-item-action">
+      <li className="list-group-item list-group-item-action">
         {foodItem.food + "-" + foodItem.key + "-" + author.person}
-      </a>
+      </li>
     </>
   );
 };
