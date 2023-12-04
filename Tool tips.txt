@@ -81,3 +81,7 @@ onClick={clickMe}
 function clickMe() {
     console.log(`Food is being bought`);
   }
+
+. Communication from child to parent and parent to child
+	1. Parent to child communication is possible by props.
+	2. Child to parent communication is possible by emitting event from child. 

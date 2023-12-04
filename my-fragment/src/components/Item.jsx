@@ -5,7 +5,7 @@ const Item = (props) => {
   const { foodItem, author } = props;
   function clickMe(food, event) {
     console.log(`${food} is being bought`);
-    console.log(event);
+    // console.log(event);
   }
   return (
     <>
