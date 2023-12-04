@@ -11,6 +11,11 @@ You are all good to go.
 to include css into your main.jsx code 
 npm install bootstrap@5.3.2
 import "bootstrap/dist/css/bootstrap.min.css";
+@media (max-width: 768px){ jb tk widht 768px hai tb tk margin top lo 10 px ka.
+    .button{
+        margin-top: 10px !important;
+    }
+}
 
 .using array.map() function
 {foodItem.map((food, key) => {

@@ -6,7 +6,6 @@ const FoodInput = () => {
     let newFood = "";
     function foodInput(event){
         newFood = event.target.value;
-        // console.log(newFood);
     }
 
     function getNewFood(){
