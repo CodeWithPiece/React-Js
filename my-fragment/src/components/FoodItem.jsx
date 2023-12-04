@@ -4,10 +4,16 @@ import FoodInput from "./FoodInput";
 
 const FoodItem = (props) => {
   let foodItem = props.foodData;
+
+  function clickMe(food, event) {
+    console.log(`${food} is being bought`);
+    // console.log(event);
+  }
+
   return (
     <>
       <div className="row justify-content-center align-items-center">
-        <FoodInput/>
+        <FoodInput />
         <div className="col-11 col-md-8 mt-3">
           <ul className="list-group">
             {foodItem.map((food, key) => {
@@ -16,6 +22,9 @@ const FoodItem = (props) => {
                   key={food}
                   foodItem={{ food, key }}
                   author={{ person: "Nirmal Kumar" }}
+                  handleClick={(event) => {
+                    clickMe(food, event);
+                  }}
                 />
               );
             })}

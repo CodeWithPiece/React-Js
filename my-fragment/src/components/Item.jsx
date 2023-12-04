@@ -2,21 +2,15 @@ import React from "react";
 import style from "./Item.module.css";
 
 const Item = (props) => {
-  const { foodItem, author } = props;
-  function clickMe(food, event) {
-    console.log(`${food} is being bought`);
-    // console.log(event);
-  }
+  const { foodItem, author, handleClick } = props;
   return (
     <>
-      <li className="list-group-item list-group-item-action">
+      <li className="list-group-item">
         {foodItem.food + "-" + foodItem.key + "-" + author.person}
         <button
           type="button"
           className={`${style.button} btn btn-success`}
-          onClick={(event) => {
-            clickMe(foodItem.food, event);
-          }}
+          onClick={handleClick}
         >
           Buy
         </button>
