@@ -69,3 +69,15 @@ create MyComp.module.css
 import style from "../style/MyComp.module.css";
 className={`${style["my-h1"]} text-uppercase fs-6 text-center`}
 
+. Handle click
+onClick={() => {
+            clickMe(foodItem.food);
+          }}
+function clickMe(food) {
+    console.log(`${food} is being bought`);
+  }
+
+onClick={clickMe}
+function clickMe() {
+    console.log(`Food is being bought`);
+  }
