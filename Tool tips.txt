@@ -90,3 +90,6 @@ function clickMe() {
 . Communication from child to parent and parent to child
 	1. Parent to child communication is possible by props.
 	2. Child to parent communication is possible by emitting event from child. 
+
+. Note: 
+	1. Functional components are stateless.

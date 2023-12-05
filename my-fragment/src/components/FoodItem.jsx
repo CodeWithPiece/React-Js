@@ -13,7 +13,7 @@ const FoodItem = (props) => {
     <>
       <div className="row justify-content-center align-items-center">
         <FoodInput />
-        <div className="col-11 col-md-8 mt-3">
+        <div className="col-11 col-md-8 mt-2">
           <ul className="list-group">
             {foodItem.map((food, key) => {
               return (
