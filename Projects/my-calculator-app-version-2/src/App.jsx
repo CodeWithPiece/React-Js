@@ -1,11 +1,11 @@
 import style from "./App.module.css";
-import Calculator from "./components/Calculator";
+import Calc from "./components/Calc";
 
 function App() {
   return (
     <>
       <div className={style.container}>
-        <Calculator/>
+        <Calc />
       </div>
     </>
   );

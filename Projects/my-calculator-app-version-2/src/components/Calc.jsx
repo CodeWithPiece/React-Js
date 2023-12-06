@@ -3,7 +3,7 @@ import style from "./Calculator.module.css";
 import InputDisplay from "./InputDisplay";
 import ButtonContainer from "./ButtonContainer";
 
-const Calculator = () => {
+const Calc = () => {
   let [input, setInput] = useState("");
   let [finalValue, setFinalValue] = useState("");
 
@@ -43,4 +43,4 @@ const Calculator = () => {
   );
 };
 
-export default Calculator;
+export default Calc;
