@@ -2,11 +2,13 @@ import { useState } from "react";
 import Demo from "./Demo";
 
 function App() {
-  const [count, setCount] = useState(0);
+  function getValue(data) {
+    console.log(`You sent ${data} to me.`);
+  }
 
   return (
     <>
-      <Demo />
+      <Demo handleClick={getValue} />
     </>
   );
 }

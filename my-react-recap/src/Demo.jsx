@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-const Demo = () => {
+const Demo = (props) => {
+  const { handleClick } = props;
+
   //   const [name, setName] = useState("");
   //   function clickMe() {
   //     console.log("Button Clicked...!!");
@@ -9,6 +11,11 @@ const Demo = () => {
   //   }
 
   const [person, setPerson] = useState({});
+  const [data, setData] = useState("");
+
+  function handleInput(event) {
+    setData(event.target.value);
+  }
 
   function clickMe() {
     const newPerson = {
@@ -24,6 +31,22 @@ const Demo = () => {
       <div>
         <h3>Hello {person.name}</h3>
         <button onClick={clickMe}>Click Me</button>
+        <br />
+        <input
+          type="text"
+          value={data}
+          onChange={(event) => {
+            handleInput(event);
+          }}
+        />
+        <br />
+        <button
+          onClick={() => {
+            handleClick(data);
+          }}
+        >
+          Send To Parent
+        </button>
       </div>
     </>
   );
