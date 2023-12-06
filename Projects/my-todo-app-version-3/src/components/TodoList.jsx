@@ -3,6 +3,12 @@ import TodoItem from "./TodoItem";
 
 const TodoList = (props) => {
   const todoItems = props.todos;
+  const { deleteHandler } = props;
+
+  // function deleteHandler(event){
+  //   console.log("dasadasda");
+  // }
+
   return (
     <div className="row justify-content-center mt-3">
       <div className="col-12 col-md-10">
@@ -25,6 +31,7 @@ const TodoList = (props) => {
                         key={item.name}
                         todoItems={item}
                         index={index}
+                        handleDelete={deleteHandler}
                       />
                     );
                   })}
