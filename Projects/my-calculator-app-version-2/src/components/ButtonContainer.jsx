@@ -12,7 +12,7 @@ const ButtonContainer = (props) => {
     "7",
     "8",
     "9",
-    "x",
+    "*",
     "4",
     "5",
     "6",
@@ -36,7 +36,7 @@ const ButtonContainer = (props) => {
             name === "C" ||
             name === "%" ||
             name === "/" ||
-            name === "x" ||
+            name === "*" ||
             name === "-" ||
             name === "+" ||
             name === "=" ||

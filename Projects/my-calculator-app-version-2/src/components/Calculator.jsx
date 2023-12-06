@@ -15,9 +15,19 @@ const Calculator = () => {
     if (value === "AC") {
       setInput("");
       setFinalValue("");
+    } else if (value === "C") {
+      setInput("");
+    } else if (value === "del") {
+      setInput(input.substring(0, input.length - 1));
+    } else if (value === "=") {
+      let regex = /^[a-zA-Z]+$/;
+      if (!regex.test(input)) {
+        let output = eval(input);
+        setFinalValue(output);
+        setInput("");
+      }
     } else {
-      input = input + value;
-      setInput(input);
+      setInput(input.concat(value));
     }
   }
 
