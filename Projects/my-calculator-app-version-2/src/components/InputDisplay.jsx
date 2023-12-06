@@ -14,6 +14,7 @@ const InputDisplay = (props) => {
         onChange={(event) => {
           inputHandler(event);
         }}
+        readOnly
       />
     </>
   );
