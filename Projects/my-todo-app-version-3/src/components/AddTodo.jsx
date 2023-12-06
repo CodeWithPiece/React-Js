@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "../style/AddTodo.module.css";
 
 const AddTodo = (props) => {
-  const { textHandler, dateHandler, buttonHandler } = props;
+  const { buttonHandler } = props;
+  const [todoText, setTodoText] = useState("");
+  const [todoDate, setTodoDate] = useState("");
+
+  function textHandler(event) {
+    setTodoText(event.target.value);
+  }
+
+  function dateHandler(event) {
+    setTodoDate(event.target.value);
+  }
+
+  function addTodoHandler(event) {
+    buttonHandler(event, todoText, todoDate);
+    setTodoText("");
+    setTodoDate("");
+  }
 
   return (
     <div className="row justify-content-center">
@@ -11,6 +27,7 @@ const AddTodo = (props) => {
           type="text"
           className="form-control p-2"
           placeholder="Enter Todo Here..."
+          value={todoText}
           onChange={textHandler}
         />
       </div>
@@ -18,6 +35,7 @@ const AddTodo = (props) => {
         <input
           type="date"
           className="form-control p-2"
+          value={todoDate}
           onChange={dateHandler}
         />
       </div>
@@ -26,7 +44,7 @@ const AddTodo = (props) => {
           <button
             className="btn btn-success"
             type="button"
-            onClick={buttonHandler}
+            onClick={addTodoHandler}
           >
             Add Todo
           </button>

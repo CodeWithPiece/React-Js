@@ -4,9 +4,6 @@ import AppTitle from "./components/AppTitle";
 import TodoList from "./components/TodoList";
 
 function App() {
-  let todoText = "";
-  let todoDate = "";
-  let todoEvent, dateEvent;
   const [todoArr, setTodoArr] = useState([
     {
       name: "PLaying Games",
@@ -26,18 +23,9 @@ function App() {
     },
   ]);
 
-  function getTodoText(event) {
-    todoText = event.target.value;
-    todoEvent = event;
-  }
-
-  function getTodoDate(event) {
-    todoDate = event.target.value;
-    dateEvent = event;
-  }
-
-  function addTodo(event) {
+  function addTodo(event, todoText, todoDate) {
     // Add Todo Code
+    console.log(todoText, todoDate);
     if (todoText && todoDate) {
       let newTodo = {
         name: todoText,
@@ -46,8 +34,6 @@ function App() {
       let newTodoArr = [...todoArr, newTodo];
       setTodoArr(newTodoArr);
       console.log(todoArr);
-      todoEvent.target.value = "";
-      dateEvent.target.value = "";
     }
   }
 
@@ -65,8 +51,6 @@ function App() {
     <div className="container text-center">
       <AppTitle />
       <AddTodo
-        textHandler={getTodoText}
-        dateHandler={getTodoDate}
         buttonHandler={addTodo}
       />
       <TodoList todos={todoArr} deleteHandler={deleteTodo} />
