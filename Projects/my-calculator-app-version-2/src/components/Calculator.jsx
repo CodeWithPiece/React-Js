@@ -24,7 +24,8 @@ const Calculator = () => {
       setFinalValue(output);
       setInput("");
     } else {
-      setInput(input.concat(value));
+      const newVal = input.concat(value);
+      setInput(newVal);
     }
   }
 
