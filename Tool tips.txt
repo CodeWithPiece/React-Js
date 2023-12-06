@@ -93,3 +93,10 @@ function clickMe() {
 
 . Note: 
 	1. Functional components are stateless.
+	2. If you are playing with useState and if you setValue(value) and then conslog.log(value), it will not show anything, but after re-render it will show the value.
+		const [value, setValue] = useState("");
+
+		onClick={(event) =>{
+			setValue("Nirmal");
+			console.log(value); // here you think yes i have set the value Nirmal but it will print "" at first after render it will print Nirmal;
+		}}
