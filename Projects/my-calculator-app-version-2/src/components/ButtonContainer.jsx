@@ -1,7 +1,9 @@
 import React from "react";
 import style from "./ButtonContainer.module.css";
 
-const ButtonContainer = () => {
+const ButtonContainer = (props) => {
+  const { handleInput } = props;
+
   const buttonNames = [
     "AC",
     "C",
@@ -46,6 +48,9 @@ const ButtonContainer = () => {
                 key={name}
                 type="button"
                 className={`${style.button} btn btn-warning`}
+                onClick={(event) => {
+                  handleInput(event, name);
+                }}
               >
                 {name}
               </button>
@@ -56,6 +61,9 @@ const ButtonContainer = () => {
                 key={name}
                 type="button"
                 className={`${style.button} btn btn-primary`}
+                onClick={(event) => {
+                  handleInput(event, name);
+                }}
               >
                 {name}
               </button>
