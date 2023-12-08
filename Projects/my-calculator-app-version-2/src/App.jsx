@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <div className={style.container}>
+        <h1>Calculator</h1>
         <Calc />
       </div>
     </>
