@@ -100,3 +100,10 @@ function clickMe() {
 			setValue("Nirmal");
 			console.log(value); // here you think yes i have set the value Nirmal but it will print "" at first after render it will print Nirmal;
 		}}
+
+. React Icons
+	link: https://react-icons.github.io/react-icons/
+	npm install react-icons --save
+	import { BsAmazon } from "react-icons/bs";
+
+	<BsAmazon />

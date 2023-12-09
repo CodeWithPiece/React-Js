@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { MdOutlineAddCircle } from "react-icons/md";
+import { BsAmazon } from "react-icons/bs";
 
 const Demo = (props) => {
   const { handleClick } = props;
@@ -46,7 +48,9 @@ const Demo = (props) => {
           }}
         >
           Send To Parent
+          <MdOutlineAddCircle />
         </button>
+        <BsAmazon />
       </div>
     </>
   );
