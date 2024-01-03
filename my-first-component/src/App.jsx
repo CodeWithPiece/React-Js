@@ -9,11 +9,8 @@ function App() {
       <h1>This is Hello World</h1>
       <button>Subscribe</button>
       <Button />
-      <Hello/>
-      <Random/>
-      <Random/>
-      <Random/>
-      <Random/>
+      <Hello />
+      <Random />
     </div>
   );
 }
