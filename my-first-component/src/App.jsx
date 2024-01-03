@@ -11,6 +11,9 @@ function App() {
       <Button />
       <Hello />
       <Random />
+      <Random />
+      <Random />
+      <Random />
     </div>
   );
 }
