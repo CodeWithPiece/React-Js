@@ -3,7 +3,7 @@ import "../style/AddTodo.css";
 
 const AddTodo = () => {
   return (
-    <div className="row justify-content-center">
+    <div className="row justify-content-center align-items-center">
       <div className="col-6 col-md-5">
         <input
           type="text"
