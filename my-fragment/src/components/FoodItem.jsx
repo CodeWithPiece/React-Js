@@ -8,14 +8,7 @@ const FoodItem = (props) => {
 
   let [currentText, setCurrentText] = useState();
   let [selectedFood, setselectedFood] = useState([]);
-  let [foodItems, setFoodItems] = useState([
-    "Rice",
-    "Dal",
-    "Salad",
-    "Green Vegetables",
-    "Fruits",
-    "Vitamins",
-  ]);
+  let [foodItems, setFoodItems] = useState(props.foodData);
 
   function clickMe(food, event) {
     let foodBought = [...selectedFood, food];

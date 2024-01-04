@@ -16,6 +16,7 @@ const Demo = (props) => {
   const [data, setData] = useState("");
 
   function handleInput(event) {
+    console.log(event.target.value);
     setData(event.target.value);
   }
 
@@ -25,7 +26,6 @@ const Demo = (props) => {
       age: 23,
     };
     setPerson(newPerson);
-    console.log(person);
   }
 
   return (

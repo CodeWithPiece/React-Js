@@ -19,8 +19,8 @@ function App() {
       <div className="container">
         <Container>
           <FoodTitle />
-          <NotFound foodData={foodItem} title="No Data Found" />
           <FoodItem foodData={foodItem} />
+          <NotFound foodData={foodItem} title="No Data Found" />
         </Container>
         <Container>
           <p>
