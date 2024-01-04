@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 import style from "./Container.module.css";
 
 const Container = (props) => {
-  return (
-    <div className={`${style.containerBox}`}>
-        {props.children}
-    </div>
-  )
-}
+  return <div className={`${style.containerBox}`}>{props.children}</div>;
+};
 
-export default Container
+export default Container;

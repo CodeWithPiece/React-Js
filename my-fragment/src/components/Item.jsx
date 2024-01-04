@@ -6,11 +6,16 @@ const Item = (props) => {
   return (
     <>
       <li className={`list-group-item ${bought && "active"}`}>
-        {foodItem.food + "-" + foodItem.key + "-" + author.person}
+        {foodItem.key + "-" + foodItem.food + "-" + author.person}
         <button
           type="button"
           className={`${style.button} btn btn-success`}
-          onClick={handleClick}
+          // onClick={(event) => {
+          //   handleClick(event);
+          // }}
+          onClick={(event) => {
+            handleClick(foodItem.food, event);
+          }}
         >
           Buy
         </button>

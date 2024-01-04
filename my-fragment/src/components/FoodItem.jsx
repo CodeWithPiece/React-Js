@@ -25,7 +25,7 @@ const FoodItem = (props) => {
 
   function foodInput(event) {
     //For Add Buttons
-    // setCurrentText(event.target.value);
+    setCurrentText(event.target.value);
 
     // For keyDown
     if (event.key === "Enter") {
@@ -37,7 +37,7 @@ const FoodItem = (props) => {
         let newFoodItems = [...foodItems, newItem];
         setFoodItems(newFoodItems);
         event.target.value = "";
-        console.log(event.target.value);
+        setCurrentText("");
       }
     }
   }
@@ -70,9 +70,10 @@ const FoodItem = (props) => {
                   foodItem={{ food, key }}
                   author={{ person: "Nirmal Kumar" }}
                   bought={selectedFood.includes(food)}
-                  handleClick={(event) => {
-                    clickMe(food, event);
-                  }}
+                  // handleClick={(event) => {
+                  //   clickMe(food, event);
+                  // }}
+                  handleClick={clickMe}
                 />
               );
             })}

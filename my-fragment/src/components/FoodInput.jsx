@@ -11,7 +11,9 @@ const FoodInput = ({ handleInput, handleClick }) => {
           // onChange={(event) => {
           //   handleInput(event);
           // }}
-          onKeyDown={handleInput}
+          onKeyDown={(event) => {
+            handleInput(event);
+          }}
         />
       </div>
       <div className={` ${style.button} col-11 col-md-2`}>
