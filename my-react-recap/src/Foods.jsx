@@ -7,6 +7,8 @@ const Foods = (props) => {
 
   function getData(food, event) {
     // console.log(`Your selected food is ${food}.`);
+
+    //Parent behaviour
     handleClick(food);
   }
 
