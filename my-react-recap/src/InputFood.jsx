@@ -3,6 +3,7 @@ import style from "./InputFood.module.css";
 
 const InputFood = (props) => {
   const handleInput = props.handleInput;
+  const typingInput = props.typingInput;
 
   function addFood(event) {
     if (event.key === "Enter") {
@@ -11,15 +12,19 @@ const InputFood = (props) => {
     }
   }
 
+  function valueChange(event) {
+    typingInput(event);
+  }
+
   return (
     <>
       <input
         type="text"
         className={`${style.foodInput}`}
         placeholder="Enter food name"
-        // onChange={(event) => {
-        //   addFood(event);
-        // }}
+        onChange={(event) => {
+          valueChange(event);
+        }}
         onKeyDown={(event) => {
           addFood(event);
         }}

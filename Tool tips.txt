@@ -94,6 +94,7 @@ function clickMe() {
 . Note: 
 	1. Functional components are stateless.
 	2. If you are playing with useState and if you setValue(value) and then conslog.log(value), it will not show anything, but after re-render it will show the value.
+	3. Whenever the state changes it will lead to re-render the react components.	
 		const [value, setValue] = useState("");
 
 		onClick={(event) =>{
