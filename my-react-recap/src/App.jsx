@@ -1,16 +1,14 @@
-import { useState } from "react";
-import Demo from "./Demo";
+import React from "react";
+import Foods from "./Foods";
 
-function App() {
-  function getValue(data) {
-    console.log(`You sent ${data} to me.`);
-  }
+const App = () => {
+  const foods = ["Mango", "Guava", "Litchi", "Lemon", "Papaya", "Orange"];
 
   return (
     <>
-      <Demo handleClick={getValue} />
+      <Foods foods={foods} />
     </>
   );
-}
+};
 
 export default App;
