@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Food.module.css";
 
 const Foods = (props) => {
-  const foods = props.foods;
+  const foods = props.items;
   const handleClick = props.handleClick;
 
   function getData(food, event) {

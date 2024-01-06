@@ -7,8 +7,8 @@ const InputFood = (props) => {
 
   function addFood(event) {
     if (event.key === "Enter") {
-      // console.log(event.target.value);
       handleInput(event.target.value);
+      event.target.value = "";
     }
   }
 

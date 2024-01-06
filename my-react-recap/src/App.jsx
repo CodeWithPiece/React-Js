@@ -4,10 +4,17 @@ import InputFood from "./InputFood";
 
 const App = () => {
   let [val, setVal] = useState("");
-
-  const foods = ["Mango", "Guava", "Litchi", "Lemon", "Papaya", "Orange"];
+  let [foods, setFoods] = useState([
+    "Mango",
+    "Guava",
+    "Litchi",
+    "Lemon",
+    "Papaya",
+    "Orange",
+  ]);
 
   function getNewFood(food) {
+    setFoods([...foods, food]);
     console.log(`Your new food is ${food}`);
   }
 
@@ -27,7 +34,7 @@ const App = () => {
             <h1 className="text-center">Foods</h1>
             <InputFood handleInput={getNewFood} typingInput={setValue} />
             <p>{val}</p>
-            <Foods foods={foods} handleClick={selectedFood} />
+            <Foods items={foods} handleClick={selectedFood} />
           </div>
         </div>
       </div>
