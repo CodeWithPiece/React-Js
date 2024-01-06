@@ -14,7 +14,8 @@ const App = () => {
   ]);
 
   function getNewFood(food) {
-    setFoods([...foods, food]);
+    let newFoods = [...foods, food];
+    setFoods(newFoods);
     console.log(`Your new food is ${food}`);
   }
 
@@ -34,7 +35,10 @@ const App = () => {
             <h1 className="text-center">Foods</h1>
             <InputFood handleInput={getNewFood} typingInput={setValue} />
             <p>{val}</p>
-            <Foods items={foods} handleClick={selectedFood} />
+            <Foods
+              items={foods}
+              handleClick={selectedFood}
+            />
           </div>
         </div>
       </div>
