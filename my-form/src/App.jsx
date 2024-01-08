@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  function handleName(event) {
+    setName(event.target.value);
+  }
+
+  function handleEmail(event) {
+    setEmail(event.target.value);
+  }
+
+  function getValue(event) {
+    event.preventDefault();
+    console.log(`Name: ${name}, Email Address: ${email}`);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form onSubmit={getValue}>
+        <div>
+          <input
+            type="text"
+            value={name}
+            placeholder="Enter Name"
+            onChange={(event) => {
+              handleName(event);
+            }}
+          />
+          <br />
+          <br />
+          <input
+            type="text"
+            value={email}
+            placeholder="Enter Email"
+            onChange={(event) => {
+              handleEmail(event);
+            }}
+          />
+          <br />
+          <br />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
