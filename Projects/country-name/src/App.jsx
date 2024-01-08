@@ -19,7 +19,7 @@ function App() {
         console.log(error);
       }
     };
-    fetchData();
+    // fetchData();
   }, []);
 
   return (
@@ -27,10 +27,8 @@ function App() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-10">
-            <Home>
-              <h1>Country Table</h1>
-            </Home>
-            <table className="table table table-striped">
+            <Home />
+            {/* <table className="table table table-striped">
               <thead>
                 <tr>
                   <th scope="col">Country Name</th>
@@ -55,7 +53,7 @@ function App() {
                   );
                 })}
               </tbody>
-            </table>
+            </table> */}
           </div>
         </div>
       </div>
