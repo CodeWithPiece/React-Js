@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import Home from "./pages/Home";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -26,7 +27,9 @@ function App() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-10">
-            <h1>Country Table</h1>
+            <Home>
+              <h1>Country Table</h1>
+            </Home>
             <table className="table table table-striped">
               <thead>
                 <tr>
