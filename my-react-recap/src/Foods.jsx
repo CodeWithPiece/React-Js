@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./Food.module.css";
+import { FaCartArrowDown } from "react-icons/fa6";
 
 const Foods = (props) => {
   let [boughtFood, setBoughtFood] = useState([]);
@@ -33,6 +34,7 @@ const Foods = (props) => {
                 }}
               >
                 BUY
+                <FaCartArrowDown className="ms-2" color="black" />
               </button>
             </li>
           );
