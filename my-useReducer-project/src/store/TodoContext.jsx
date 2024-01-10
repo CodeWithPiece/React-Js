@@ -25,6 +25,8 @@ const TodoContextProvider = (props) => {
   const [todos, dispatch] = useReducer(reducer, initialState);
 
   const addTodo = (newTodo) => {
+    //We are passing action in dispatch
+    // Dispatch call reducer function with action as a parameter to manipulate state
     dispatch({
       type: "ADD_ITEM",
       payload: {
