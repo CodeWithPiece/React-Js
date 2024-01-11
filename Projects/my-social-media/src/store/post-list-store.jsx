@@ -23,6 +23,22 @@ const DEFAULT_POST_LIST = [
     userId: "user-1",
     tags: ["New Car", "Safe Drive", "Gift"],
   },
+  {
+    id: "3",
+    title: "React Practise",
+    body: "Hello Friends, I am enhancing my skill in frontend using React Js. Peace out.",
+    reaction: "100",
+    userId: "user-2",
+    tags: ["React", "Frontend", "Developer"],
+  },
+  {
+    id: "4",
+    title: "Feeling Sad",
+    body: "Hello Friends, Today I had a dream about my ex-girl friend, woh din vhi kya din thae.",
+    reaction: "200",
+    userId: "user-5",
+    tags: ["Sad", "Lonely", "Bored"],
+  },
 ];
 
 const postListReducer = (currentPostList, action) => {

@@ -8,5 +8,9 @@
 }
 
 .card-post{
-  margin: 15px 10px;
+  margin: 20px 15px;
+}
+
+.hearder{
+  min-height: 50px;
 }
