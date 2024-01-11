@@ -4,7 +4,7 @@ const Sidebar = ({ selectedTab, handleSelection }) => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
-      style={{ width: "280px" }}
+      style={{ width: "250px" }}
     >
       <a
         href="/"

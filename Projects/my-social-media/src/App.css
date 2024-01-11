@@ -1,11 +1,12 @@
 .app-container{
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
 }
 .content{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 100%;
+}
+
+.card-post{
+  margin: 15px 10px;
 }
