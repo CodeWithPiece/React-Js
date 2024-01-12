@@ -9,15 +9,18 @@ const PostList = () => {
   const [fetching, setFetching] = useState(false);
   useEffect(() => {
     setFetching(true);
-    console.log("Start Fetching");
-    fetch("https://dummyjson.com/posts")
+    const controller = new AbortController();
+    const signal = controller.signal;
+    fetch("https://dummyjson.com/posts", { signal })
       .then((res) => res.json())
       .then((data) => {
         createMultiplePost(data.posts);
         setFetching(false);
-        console.log("Return Fetching");
       });
-    console.log("Stop Fetching");
+    return () => {
+      console.log("Cleaning useEffect");
+      controller.abort();
+    };
   }, []);
 
   // [] run at initial render
