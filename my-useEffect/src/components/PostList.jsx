@@ -15,6 +15,7 @@ const PostList = () => {
       .then((data) => {
         createMultiplePost(data.posts);
         setFetching(false);
+        console.log("Return Fetching");
       });
     console.log("Stop Fetching");
   }, []);
