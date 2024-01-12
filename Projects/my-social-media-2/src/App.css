@@ -1,0 +1,16 @@
+.app-container{
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+.content{
+  width: 100%;
+}
+
+.card-post{
+  margin: 20px 15px;
+}
+
+.hearder{
+  min-height: 50px;
+}
