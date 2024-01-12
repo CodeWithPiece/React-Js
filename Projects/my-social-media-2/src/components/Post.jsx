@@ -29,7 +29,7 @@ const Post = ({ post }) => {
           );
         })}
         <div className="alert alert-success mt-2" role="alert">
-          This post has been reacted by {post.reaction} peoples.
+          This post has been reacted by {post.reactions} peoples.
         </div>
       </div>
     </div>

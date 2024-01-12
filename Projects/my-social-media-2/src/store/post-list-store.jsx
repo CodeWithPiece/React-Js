@@ -3,6 +3,7 @@ import { createContext, useReducer } from "react";
 export const PostListContext = createContext({
   postList: [],
   createPost: () => {},
+  createMultiplePost: () => {},
   deletePost: () => {},
 });
 
@@ -11,7 +12,7 @@ const DEFAULT_POST_LIST = [
     id: "1",
     title: "Going to Mumbai",
     body: "Hello Friends, I am going to Mumbai for my vacataions. Hope to enjoy a lot. Peace out.",
-    reaction: "2",
+    reactions: "2",
     userId: "user-007",
     tags: ["Vacation", "Mumbai", "Enjoying"],
   },
@@ -19,7 +20,7 @@ const DEFAULT_POST_LIST = [
     id: "2",
     title: "My New Car",
     body: "Hello Friends, Today my parents gifted me a new car. Woohoo...!!",
-    reaction: "5",
+    reactions: "5",
     userId: "user-1",
     tags: ["New Car", "Safe Drive", "Gift"],
   },
@@ -27,7 +28,7 @@ const DEFAULT_POST_LIST = [
     id: "3",
     title: "React Practise",
     body: "Hello Friends, I am enhancing my skill in frontend using React Js. Peace out.",
-    reaction: "100",
+    reactions: "100",
     userId: "user-2",
     tags: ["React", "Frontend", "Developer"],
   },
@@ -35,7 +36,7 @@ const DEFAULT_POST_LIST = [
     id: "4",
     title: "Feeling Sad",
     body: "Hello Friends, Today I had a dream about my ex-girl friend, woh din vhi kya din thae.",
-    reaction: "200",
+    reactions: "200",
     userId: "user-5",
     tags: ["Sad", "Lonely", "Bored"],
   },
@@ -49,16 +50,14 @@ const postListReducer = (currentPostList, action) => {
     });
   } else if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...newPostList];
+  } else if (action.type === "ADD_MULTIPLE_POST") {
+    newPostList = action.payload.posts;
   }
   return newPostList;
 };
 
 const PostListProvider = (props) => {
-  const [postList, dispatchPostList] = useReducer(
-    postListReducer,
-    DEFAULT_POST_LIST
-  );
-
+  const [postList, dispatchPostList] = useReducer(postListReducer, []);
   const createPost = (
     userId,
     postTitle,
@@ -72,9 +71,18 @@ const PostListProvider = (props) => {
         id: Date.now(),
         title: postTitle,
         body: postContent,
-        reaction: postReaction,
+        reactions: postReaction,
         userId: userId,
         tags: postTags,
+      },
+    });
+  };
+
+  const createMultiplePost = (posts) => {
+    dispatchPostList({
+      type: "ADD_MULTIPLE_POST",
+      payload: {
+        posts,
       },
     });
   };
@@ -84,7 +92,9 @@ const PostListProvider = (props) => {
   };
 
   return (
-    <PostListContext.Provider value={{ postList, createPost, deletePost }}>
+    <PostListContext.Provider
+      value={{ postList, createPost, createMultiplePost, deletePost }}
+    >
       {props.children}
     </PostListContext.Provider>
   );
