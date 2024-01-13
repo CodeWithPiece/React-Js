@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Clock.css";
 
 const Clock = () => {
-  let currentDate = new Date().toLocaleDateString();
-  let currentTime = new Date().toLocaleTimeString();
-  console.log(`${currentDate} ${currentTime}`);
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    console.log("Interval Started...!!");
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+
+    return () => {
+      console.log("Interval Cleared...!!");
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <div className="row justify-content-center">
       <div className="col-md-3">
@@ -15,7 +26,9 @@ const Clock = () => {
             alt="india in globe"
           />
           <div className="card-body">
-            <h5 className="card-title">{currentDate + " " + currentTime}</h5>
+            <h5 className="card-title">
+              {date.toLocaleDateString() + " " + date.toLocaleTimeString()}
+            </h5>
             <p className="card-text">
               Life is like riding a bicycle. To keep your balance, you must keep
               moving.
