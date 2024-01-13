@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "./Form";
+import Counter from "./Counter";
 
 function App() {
   const [arr, setArr] = useState([
@@ -27,6 +28,8 @@ function App() {
           );
         })}
       </ul>
+
+      <Counter />
     </>
   );
 }
