@@ -1,29 +1,21 @@
 import { useEffect } from "react";
 import "./App.css";
 import { useState } from "react";
+import Counter from "./Counter";
 
 function App() {
-  let [count, setCount] = useState(0);
   const [state, setState] = useState(true);
-  useEffect(() => {
-    console.log("Mount useEffect...!!");
-  }, []);
-
-  useEffect(() => {
-    console.log("Update useEffect...!!");
-  }, [count]);
 
   return (
     <>
-      {state && <h1>Count: {count}</h1>}
+      {state && <Counter />}
       <button
         onClick={() => {
-          setCount(count++);
+          setState(!state);
         }}
       >
-        Click
+        Toggle
       </button>
-      <button>Toggle</button>
     </>
   );
 }
