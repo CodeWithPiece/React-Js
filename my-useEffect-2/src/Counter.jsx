@@ -17,6 +17,7 @@ const Counter = () => {
     <>
       <h1>Count: {count}</h1>
       <button
+        className="btn btn-primary"
         onClick={() => {
           setCount((count += 1));
         }}

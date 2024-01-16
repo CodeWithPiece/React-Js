@@ -10,6 +10,7 @@ function App() {
     <>
       {state && <Counter />}
       <button
+        className="btn btn-primary"
         onClick={() => {
           setState(!state);
         }}
