@@ -7,14 +7,13 @@ const Post = ({ post, index }) => {
   return (
     <>
       <tr>
-        <th>{index + 1}</th>
-        <td>{post.postId}</td>
-        <td>{post.postTitle}</td>
-        <td>{post.postBody}</td>
+        <td>{post.id}</td>
+        <td>{post.title}</td>
+        <td>{post.body}</td>
         <td
           className="text-danger"
           onClick={() => {
-            deletePost(post.postId);
+            deletePost(post.id);
           }}
         >
           <MdDelete />

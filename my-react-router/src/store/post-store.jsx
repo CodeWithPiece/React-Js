@@ -1,34 +1,28 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import React from "react";
 
 export const PostContext = createContext({
   posts: [],
   addPost: () => {},
   deletePost: () => {},
+  fetching: false,
 });
-
-const DEFAULT_POST_LIST = [
-  { postId: 1, postTitle: "Hello", postBody: "This is post body" },
-  { postId: 2, postTitle: "Hello", postBody: "This is post body" },
-  { postId: 3, postTitle: "Hello", postBody: "This is post body" },
-  { postId: 4, postTitle: "Hello", postBody: "This is post body" },
-  { postId: 5, postTitle: "Hello", postBody: "This is post body" },
-  { postId: 6, postTitle: "Hello", postBody: "This is post body" },
-];
 
 const postReducer = (currentPosts, action) => {
   let newPosts = currentPosts;
   if (action.type === "ADD_POST") {
     newPosts = [action.payload, ...newPosts];
-    return newPosts;
+  } else if (action.type === "ADD_POSTS") {
+    newPosts = action.payload;
   } else if (action.type === "DELETE_POST") {
-    newPosts = newPosts.filter((post) => post.postId != action.payload);
+    newPosts = newPosts.filter((post) => post.id != action.payload);
   }
   return newPosts;
 };
 
 const PostProvider = ({ children }) => {
-  const [posts, postDispatch] = useReducer(postReducer, DEFAULT_POST_LIST);
+  const [posts, postDispatch] = useReducer(postReducer, []);
+  const [fetching, setFetching] = useState(false);
 
   const addPost = (post) => {
     postDispatch({
@@ -44,8 +38,32 @@ const PostProvider = ({ children }) => {
     });
   };
 
+  const addInitialPost = (posts) => {
+    postDispatch({
+      type: "ADD_POSTS",
+      payload: posts,
+    });
+  };
+
+  useEffect(() => {
+    setFetching(true);
+    const controller = new AbortController();
+    const signal = controller.signal;
+    fetch("https://dummyjson.com/posts", { signal })
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPost(data.posts);
+        setFetching(false);
+      });
+
+    return () => {
+      setFetching(false);
+      controller.abort();
+    };
+  }, []);
+
   return (
-    <PostContext.Provider value={{ posts, addPost, deletePost }}>
+    <PostContext.Provider value={{ posts, addPost, deletePost, fetching }}>
       {children}
     </PostContext.Provider>
   );

@@ -10,9 +10,9 @@ const AddPost = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addPost({
-      postId: postId.current.value,
-      postTitle: postTitle.current.value,
-      postBody: postBody.current.value,
+      id: postId.current.value,
+      title: postTitle.current.value,
+      body: postBody.current.value,
     });
     postId.current.value = "";
     postTitle.current.value = "";

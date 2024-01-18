@@ -2,6 +2,7 @@ import AddPost from "./components/AddPost";
 import Welcome from "./components/Welcome";
 import PostList from "./components/PostList";
 import PostProvider from "./store/post-store";
+import Loader from "./components/Loader";
 
 function App() {
   return (
