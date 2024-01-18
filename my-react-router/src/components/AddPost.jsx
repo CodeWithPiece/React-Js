@@ -1,19 +1,31 @@
 import React, { useContext, useRef } from "react";
 import { PostContext } from "../store/post-store";
+import Loader from "./Loader";
 
 const AddPost = () => {
-  const { addPost } = useContext(PostContext);
+  const { addPost, setFetching } = useContext(PostContext);
   const postId = useRef();
   const postTitle = useRef();
   const postBody = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addPost({
-      id: postId.current.value,
-      title: postTitle.current.value,
-      body: postBody.current.value,
-    });
+    setFetching(true);
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: postTitle.current.value,
+        body: postBody.current.value,
+        userId: postId.current.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => {
+        setFetching(false);
+        addPost(post);
+      });
+
     postId.current.value = "";
     postTitle.current.value = "";
     postBody.current.value = "";
