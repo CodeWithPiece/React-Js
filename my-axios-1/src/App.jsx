@@ -1,29 +1,34 @@
 import { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 function App() {
   const [fetching, setFetching] = useState(false);
-  const [btnText, setBtnText] = useState("Fetch Data");
+  const [btnText, setBtnText] = useState("Get Data");
 
-  const fetchData = () =>{
+  const fetchData = () => {
     setFetching(true);
     setBtnText("Loading...");
-    setTimeout(()=>{
-      setFetching(false);
-      setBtnText("Fetch Data");
-    },2000);
-  }
+    axios
+      .get("https://dummyjson.com/comments")
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setFetching(false);
+        setBtnText("Get Data");
+      });
+  };
 
   return (
     <>
-      <button
-        class="btn btn-primary"
-        type="button"
-        onClick={fetchData}
-      >
+      <button className="btn btn-primary" type="button" onClick={fetchData}>
         {fetching && (
           <span
-            class="spinner-border spinner-border-sm me-2"
+            className="spinner-border spinner-border-sm me-2"
             aria-hidden="true"
           ></span>
         )}
