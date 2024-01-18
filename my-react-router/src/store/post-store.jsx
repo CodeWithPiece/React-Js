@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 import React from "react";
 
 export const PostContext = createContext({
@@ -28,7 +28,6 @@ const postReducer = (currentPosts, action) => {
 };
 
 const PostProvider = ({ children }) => {
-  // const [posts, setPosts] = useState(DEFAULT_POST_LIST);
   const [posts, postDispatch] = useReducer(postReducer, DEFAULT_POST_LIST);
 
   const addPost = (post) => {
@@ -36,9 +35,6 @@ const PostProvider = ({ children }) => {
       type: "ADD_POST",
       payload: post,
     });
-    // setPosts((currentPost) => {
-    //   return [...currentPost, post];
-    // });
   };
 
   const deletePost = (postId) => {
@@ -46,9 +42,6 @@ const PostProvider = ({ children }) => {
       type: "DELETE_POST",
       payload: postId,
     });
-    // setPosts((currentPost) => {
-    //   return currentPost.filter((post) => post.postId != postId);
-    // });
   };
 
   return (
