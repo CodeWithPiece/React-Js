@@ -1,6 +1,5 @@
 import React, { useContext, useRef } from "react";
 import { PostContext } from "../store/post-store";
-import Loader from "./Loader";
 
 const AddPost = () => {
   const { addPost, setFetching } = useContext(PostContext);
@@ -22,8 +21,8 @@ const AddPost = () => {
     })
       .then((res) => res.json())
       .then((post) => {
-        setFetching(false);
         addPost(post);
+        setFetching(false);
       });
 
     postId.current.value = "";

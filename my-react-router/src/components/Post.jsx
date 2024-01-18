@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import { PostContext } from "../store/post-store";
 
-const Post = ({ post, index }) => {
+const Post = ({ post }) => {
   const { deletePost } = useContext(PostContext);
   return (
     <>
