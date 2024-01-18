@@ -9,8 +9,8 @@ const PostList = () => {
     <div className="col-md-10">
       {fetching && <Loader />}
       {!fetching && (
-        <div className="card  mt-4">
-          <div className="card-body">
+        <div className="card mt-4">
+          <div className="card-body table-responsive">
             <table className="table table-striped">
               <thead>
                 <tr>

@@ -11,7 +11,7 @@ export const PostContext = createContext({
 const postReducer = (currentPosts, action) => {
   let newPosts = currentPosts;
   if (action.type === "ADD_POST") {
-    newPosts = [action.payload, ...newPosts];
+    newPosts = [...newPosts, action.payload];
   } else if (action.type === "ADD_POSTS") {
     newPosts = action.payload;
   } else if (action.type === "DELETE_POST") {
