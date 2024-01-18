@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdDelete } from "react-icons/md";
+import { PostContext } from "../store/post-store";
 
-const Post = ({ post, index, deletePost }) => {
+const Post = ({ post, index }) => {
+  const { deletePost } = useContext(PostContext);
   return (
     <>
       <tr>

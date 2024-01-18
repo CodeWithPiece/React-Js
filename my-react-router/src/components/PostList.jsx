@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Post from "./Post";
+import { PostContext } from "../store/post-store";
 
-const PostList = ({ posts, deletePost }) => {
+const PostList = () => {
+  const { posts } = useContext(PostContext);
   return (
     <div className="col-md-10 mt-4">
       <div className="card">
@@ -18,14 +20,7 @@ const PostList = ({ posts, deletePost }) => {
             </thead>
             <tbody>
               {posts.map((post, index) => {
-                return (
-                  <Post
-                    key={index}
-                    post={post}
-                    index={index}
-                    deletePost={deletePost}
-                  />
-                );
+                return <Post key={index} post={post} index={index} />;
               })}
             </tbody>
           </table>

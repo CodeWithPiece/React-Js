@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { PostContext } from "../store/post-store";
 
-const AddPost = ({ addPost }) => {
+const AddPost = () => {
+  const { addPost } = useContext(PostContext);
   const postId = useRef();
   const postTitle = useRef();
   const postBody = useRef();
