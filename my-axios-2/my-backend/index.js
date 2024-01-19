@@ -2,16 +2,14 @@ const express = require("express");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
 const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(
-  fileUpload({
-    createParentPath: true,
-  })
-);
+app.use(fileUpload());
 app.use(cors());
+app.use("/images", express.static("uploads"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -32,6 +30,7 @@ app.post("/data", (req, res) => {
 });
 
 app.post("/post", (req, res) => {
+  const __dirname = path.resolve(path.dirname(__filename));
   try {
     if (!req.files) {
       res.send({
@@ -40,10 +39,11 @@ app.post("/post", (req, res) => {
       });
     } else {
       let avatar = req.files.avatar;
+      avatar.mv(`${__dirname}/uploads/` + avatar.name);
       const data = {
         name: req.body.name,
         email: req.body.email,
-        image: avatar.name,
+        image: `/images/${avatar.name}`,
       };
       res.send({
         status: true,
