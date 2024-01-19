@@ -1,20 +1,19 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import axios from "axios";
-import Form from "./Form";
 
-function App() {
-  const fileRef = useRef();
+const Form = () => {
   const nameRef = useRef();
   const emailRef = useRef();
+
   const handleSubmit = (event) => {
-    // Sending multipart/form-data
+    // Sending form-data
     event.preventDefault();
-    const formData = new FormData();
-    formData.append("avatar", fileRef.current.files[0]);
-    formData.append("name", nameRef.current.value);
-    formData.append("email", emailRef.current.value);
+    const data = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+    };
     axios
-      .post("http://localhost:3000/post", formData)
+      .post("http://localhost:3000/data", data)
       .then(function (response) {
         console.log(response);
       })
@@ -28,10 +27,8 @@ function App() {
 
   return (
     <>
-      <h3>Sending via multipart/form-data</h3>
+      <h3>Sending via form-data</h3>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <input ref={fileRef} type="file" name="avatar" />
-        <br />
         <input ref={nameRef} type="text" name="name" placeholder="Name" />
         <br />
         <input
@@ -44,10 +41,8 @@ function App() {
         <br />
         <button>Submit Avatar</button>
       </form>
-      <hr />
-      <Form></Form>
     </>
   );
-}
+};
 
-export default App;
+export default Form;
