@@ -19,32 +19,24 @@ app.get("/", (req, res) => {
   res.json("Hello");
 });
 
-app.post("/data", (req, res) => {
-  const data = { name: req.body.name, email: req.body.email };
-  res.send({
-    status: true,
-    message: "Data added..!!",
-    data: data,
-  });
-});
-
 app.post("/post", (req, res) => {
   try {
     if (!req.files) {
       res.send({
         status: false,
-        message: "No file uploaded",
+        message: "Image is required...!!",
       });
     } else {
       let avatar = req.files.avatar;
+      const data = {
+        name: req.body.name,
+        email: req.body.email,
+        image: avatar.name,
+      };
       res.send({
         status: true,
-        message: "File is uploaded",
-        data: {
-          name: avatar.name,
-          mimetype: avatar.mimetype,
-          size: avatar.size,
-        },
+        message: "Data is uploaded",
+        data: data,
       });
     }
   } catch (error) {
