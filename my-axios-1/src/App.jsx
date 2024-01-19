@@ -3,13 +3,15 @@ import axios from "axios";
 
 function App() {
   const [fetching, setFetching] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
   const [btnText, setBtnText] = useState("Get Data");
   const commentId = useRef();
+  const searchInput = useRef();
+  const addInput = useRef();
 
   const fetchData = () => {
     setFetching(true);
     setBtnText("Loading...");
+    //https://dummyjson.com/comments
     axios
       .get("https://dummyjson.com/comments")
       .then((response) => {
@@ -25,8 +27,8 @@ function App() {
   };
 
   const handleSubmit = (event) => {
-    setSubmitting(true);
     event.preventDefault();
+    //https://dummyjson.com/comments/1
     axios
       .get(`https://dummyjson.com/comments/${commentId.current.value}`)
       .then((response) => {
@@ -36,9 +38,48 @@ function App() {
         console.log(error);
       })
       .finally(() => {
-        setSubmitting(false);
         commentId.current.value = "";
         commentId.current.focus();
+      });
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    //https://dummyjson.com/products/search?q=phone
+    axios
+      .get(`https://dummyjson.com/products/search`, {
+        params: {
+          q: searchInput.current.value,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        searchInput.current.value = "";
+        searchInput.current.focus();
+      });
+  };
+
+  const handleAddProduct = (event) => {
+    event.preventDefault();
+    //https://dummyjson.com/products/add
+    axios
+      .post(`https://dummyjson.com/products/add`, {
+        title: addInput.current.value,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        addInput.current.value = "";
+        addInput.current.focus();
       });
   };
 
@@ -71,14 +112,46 @@ function App() {
           </form>
         </div>
         <div className="col-md-2">
-          <button className="btn btn-primary">
-            {submitting && (
-              <span
-                className="spinner-border spinner-border-sm me-2"
-                aria-hidden="true"
-              ></span>
-            )}
-            Submit
+          <button className="btn btn-primary" onClick={handleSubmit}>
+            Get Comment
+          </button>
+        </div>
+      </div>
+      <div className="row justify-content-center mt-3">
+        <div className="col-md-4">
+          <form onSubmit={handleSearch}>
+            <div>
+              <input
+                ref={searchInput}
+                type="text"
+                className="form-control"
+                placeholder="Search..."
+              />
+            </div>
+          </form>
+        </div>
+        <div className="col-md-2">
+          <button className="btn btn-primary" onClick={handleSearch}>
+            Search Product
+          </button>
+        </div>
+      </div>
+      <div className="row justify-content-center mt-3">
+        <div className="col-md-4">
+          <form onSubmit={handleAddProduct}>
+            <div>
+              <input
+                ref={addInput}
+                type="text"
+                className="form-control"
+                placeholder="Product Name"
+              />
+            </div>
+          </form>
+        </div>
+        <div className="col-md-2">
+          <button className="btn btn-primary" onClick={handleAddProduct}>
+            Add Product
           </button>
         </div>
       </div>
