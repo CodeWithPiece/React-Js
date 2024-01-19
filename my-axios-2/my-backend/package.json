@@ -1,0 +1,15 @@
+{
+  "name": "my-backend",
+  "version": "1.0.0",
+  "description": "Backend for file uploading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Nirmal",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
