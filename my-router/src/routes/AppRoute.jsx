@@ -14,7 +14,7 @@ const AppRoute = ({ children }) => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/users" element={<Users />} />
-        <Route path="/users/:id" element={<UserDetails />} />
+        <Route path="/user/:id" element={<UserDetails />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

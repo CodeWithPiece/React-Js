@@ -55,7 +55,7 @@ const Users = () => {
                         <td className="text-success">
                           <Link
                             className="nav-link active"
-                            to={`/users/${user.id}`}
+                            to={`/user/${user.id}`}
                           >
                             <FaRegEye className="me-1" />
                             View
