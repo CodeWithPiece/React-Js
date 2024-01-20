@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home, { getProducts } from "./components/Home.jsx";
 import About from "./components/About.jsx";
-import Profile from "./components/Profile.jsx";
+import Profile, { addProduct } from "./components/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/about", element: <About /> },
       { path: "/home", element: <Home />, loader: getProducts },
-      { path: "/profile", element: <Profile /> },
+      { path: "/profile", element: <Profile />, action: addProduct },
     ],
   },
   { path: "/", element: <App /> },
