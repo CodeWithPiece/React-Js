@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -23,19 +23,44 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "black",
+                    };
+                  }}
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/users">
+                <NavLink
+                  className="nav-link active"
+                  to="/users"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "black",
+                    };
+                  }}
+                >
                   Users
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/about">
+                <NavLink
+                  className="nav-link active"
+                  to="/about"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "black",
+                    };
+                  }}
+                >
                   About
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <form className="d-flex" role="search">
