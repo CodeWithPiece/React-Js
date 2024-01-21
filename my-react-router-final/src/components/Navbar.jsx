@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,13 +10,34 @@ const Navbar = () => {
           <h3>Navbar</h3>
           <ul className="nav-link">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => {
+                  return isActive ? "active" : "";
+                }}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => {
+                  return isActive ? "active" : "";
+                }}
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => {
+                  return isActive ? "active" : "";
+                }}
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
