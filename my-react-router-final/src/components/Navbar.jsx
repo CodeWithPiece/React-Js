@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -37,6 +37,16 @@ const Navbar = () => {
                 }}
               >
                 Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) => {
+                  return isActive ? "active" : "";
+                }}
+              >
+                Dashboard
               </NavLink>
             </li>
           </ul>

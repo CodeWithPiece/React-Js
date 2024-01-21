@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import ErrorPage from "./components/ErrorPage";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
