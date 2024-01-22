@@ -3,10 +3,18 @@
   --bs-tooltip-color: white;
 }
 
+.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-border-color: gray;
+  --bs-popover-header-bg: red;
+  --bs-popover-header-color: white;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.5rem;
+}
+
 body {
   height: 100vh;
   display: flex;
-  padding: 200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
