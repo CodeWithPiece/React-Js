@@ -4,14 +4,20 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./App.css";
 import Controls from "./components/Controls";
+import { useSelector } from "react-redux";
+import Privacy from "./components/Privacy";
 
 const App = () => {
+  const privacy = useSelector((store) => {
+    return store.privacy;
+  });
+
   return (
     <div className="main-div">
       <Container>
         <Header />
         <div className="card-body">
-          <DisplayCounter />
+          {privacy ? <Privacy /> : <DisplayCounter />}
           <Controls />
         </div>
         <Footer />
