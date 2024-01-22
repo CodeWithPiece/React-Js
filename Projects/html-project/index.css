@@ -1,0 +1,13 @@
+.custom-tooltip {
+  --bs-tooltip-bg: red;
+  --bs-tooltip-color: white;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  padding: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
