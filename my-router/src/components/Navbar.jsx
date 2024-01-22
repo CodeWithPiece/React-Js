@@ -75,6 +75,19 @@ const Navbar = () => {
                   Url Params
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  to="/dashboard"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "black",
+                    };
+                  }}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
             </ul>
             <form className="d-flex" role="search">
               <input

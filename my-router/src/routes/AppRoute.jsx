@@ -6,6 +6,9 @@ import NotFound from "../components/NotFound";
 import Users from "../components/Users";
 import UserDetails from "../components/UserDetails";
 import UrlParams from "../components/UrlParams";
+import Dashboard from "../components/Dashboard";
+import Profile from "../components/Profile";
+import Setting from "../components/Setting";
 
 const AppRoute = ({ children }) => {
   return (
@@ -17,6 +20,10 @@ const AppRoute = ({ children }) => {
         <Route path="/users" element={<Users />} />
         <Route path="/user/:id" element={<UserDetails />} />
         <Route path="/getUrl" element={<UrlParams />} />
+        <Route path="/dashboard/" element={<Dashboard />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="setting" element={<Setting />} />
+        </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
