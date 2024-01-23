@@ -51,8 +51,8 @@ button {
   border-radius: 2px;
 }
 
-button:hover{
-    cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
 
 .hero {
@@ -106,5 +106,5 @@ button:hover{
 }
 
 .brand-icons:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
