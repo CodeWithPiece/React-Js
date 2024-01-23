@@ -9,3 +9,12 @@ export const decrementNumber = () => {
     type: "DECREMENT",
   };
 };
+
+export const deleteAction = (id) => {
+  return {
+    type: "DELETE",
+    payload: {
+      id: id,
+    },
+  };
+};

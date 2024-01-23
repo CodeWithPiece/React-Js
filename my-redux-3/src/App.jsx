@@ -1,11 +1,10 @@
-import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { decrementNumber, incrementNumber } from "./actions/appActions";
+import List from "./components/List";
 
 function App() {
-  console.log("Render");
   const currentState = useSelector((store) => {
-    return console.log(store.counterReducer), store.counterReducer.value;
+    return store.counterReducer.value;
   });
   const dispatch = useDispatch();
 
@@ -37,6 +36,7 @@ function App() {
           Danger
         </button>
       </div>
+      <List />
     </>
   );
 }
