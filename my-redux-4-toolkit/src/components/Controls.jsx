@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { counterActions, privacyAction } from "../store";
+import { counterActions } from "../slices/counter";
+import { privacyAction } from "../slices/privacy";
 
 const Controls = () => {
   const dispatch = useDispatch();
@@ -35,9 +36,6 @@ const Controls = () => {
   };
 
   const handleToogle = () => {
-    // dispatch({
-    //   type: "TOOGLE",
-    // });
     dispatch(privacyAction.toggle());
   };
 
