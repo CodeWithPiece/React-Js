@@ -1,6 +1,26 @@
-.main-div {
-  height: 100vh;
+.item-div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 10px;
+  overflow: scroll;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
+.add-btn {
+  background-color: blue;
+  border: 0px;
+  border-radius: 10px;
+  padding: 6px;
+  color: white;
 }
