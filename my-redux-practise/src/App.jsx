@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment, add } from "./redux/actions/counterAction";
+import { toogle } from "./redux/actions/toogleAction";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+  const value = useSelector((state) => {
+    return state.counterReducer;
+  });
+  const isShow = useSelector((state) => {
+    return state.toogleReducer;
+  });
+
+  const handleIncrement = () => {
+    dispatch(increment());
+  };
+
+  const handleDecrement = () => {
+    dispatch(decrement());
+  };
+
+  const handleAdd = () => {
+    dispatch(add(5));
+  };
+
+  const handleToogle = () => {
+    dispatch(toogle());
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Redux Counter</h1>
+      <div className="toogle-div">
+        {isShow && <p>This is confidentail data...!!</p>}
+        <button onClick={handleToogle}>Toogle</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleAdd}>Increment By 5</button>
+      <h3>Count: {value}</h3>
+      <button onClick={handleDecrement}>Decrement</button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
