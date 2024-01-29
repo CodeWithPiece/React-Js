@@ -7,10 +7,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import store from "./redux/store.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-
-  // </React.StrictMode>
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );
