@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = ({ item }) => {
+const HomeItem = ({ item }) => {
   return (
     <div className="item-container">
       <img className="item-image" src={item.image} alt="item image" />
@@ -26,4 +26,4 @@ const Home = ({ item }) => {
   );
 };
 
-export default Home;
+export default HomeItem;
