@@ -47,7 +47,7 @@ const Header = () => {
           <span className="action_name">Wishlist</span>
         </div>
 
-        <Link className="action_container" to={"/bag"}>
+        <Link className="action_container text-black" to={"/bag"}>
           <FaBagShopping />
           <span className="action_name">Bag</span>
           <span className="bag-item-count">0</span>
