@@ -1,13 +1,4 @@
-.parent-div {
-  height: 100vh;
-}
-
-.top-header {
-  border: 1px solid var(--light-grey);
-}
-
 .logo-container {
-  margin-top: 1px;
   height: 50px;
   width: 50px;
   border-radius: 100px;
@@ -25,7 +16,6 @@
 }
 
 .profile-container {
-  margin-bottom: 10px;
   padding: 12px;
   border-radius: 100px;
   transition: background-color 100ms ease-in-out 100ms;
@@ -48,10 +38,12 @@
 
 .profile-name {
   font-size: 15px;
+  margin-bottom: 0px;
   color: black;
 }
 
 .profile-username {
   font-size: 14px;
+  margin-bottom: 0px;
   color: var(--twit-grey);
 }

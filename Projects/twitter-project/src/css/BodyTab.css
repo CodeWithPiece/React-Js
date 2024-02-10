@@ -1,0 +1,46 @@
+.body-tab {
+    border-style: solid;
+    border-color: var(--light-grey);
+    border-width: 0px 1px 0px 1px;
+  }
+  
+  .tab {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 1rem;
+  }
+  
+  .tab-for {
+    transition: background-color 100ms ease-in-out 100ms;
+  }
+  
+  .tab-for:hover {
+    cursor: pointer;
+    background-color: var(--light-grey);
+  }
+  
+  .tab-following {
+    transition: background-color 100ms ease-in-out 100ms;
+  }
+  
+  .tab-following:hover {
+    cursor: pointer;
+    background-color: var(--light-grey);
+  }
+  
+  .tab-setting {
+    font-size: 20px;
+    padding: 0px 1rem;
+  }
+  
+  .tab-setting div {
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    transition: background-color 100ms ease-in-out 100ms;
+  }
+  
+  .tab-setting div:hover {
+    cursor: pointer;
+    background-color: var(--light-grey);
+  }

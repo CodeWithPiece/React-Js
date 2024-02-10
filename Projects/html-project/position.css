@@ -1,0 +1,21 @@
+.parent{
+    height: 5000px;
+    background-color: gainsboro;
+    position: relative;
+}
+
+.child1{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rebeccapurple;
+}
+
+.child2{
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    background-color: red;
+}
