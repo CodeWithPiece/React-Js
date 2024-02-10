@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import "../css/Main.css";
 import Body from "./Body";
+import Search from "./Search";
 
 const Main = () => {
   return (
@@ -9,8 +10,8 @@ const Main = () => {
       <div className="container">
         <div className="row parent-div">
           <Header />
-          <Body/>
-          <div className="col-md-3"></div>
+          <Body />
+          <Search />
         </div>
       </div>
     </>
