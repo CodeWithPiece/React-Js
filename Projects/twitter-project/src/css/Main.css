@@ -1,0 +1,5 @@
+.parent-div {
+  width: calc(100vw - scrollbar-width);
+  height: calc(100vh);
+  overflow: hidden;
+}

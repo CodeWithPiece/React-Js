@@ -34,6 +34,24 @@ const Foreground = () => {
       close: false,
       tag: { isOpen: false, tagTitle: "Download Now", tagColor: "bg-sky-600" },
     },
+    {
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello there...!!",
+      fileSize: ".4mb",
+      close: false,
+      tag: { isOpen: false, tagTitle: "Download Now", tagColor: "bg-sky-600" },
+    },
+    {
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello there...!!",
+      fileSize: ".4mb",
+      close: false,
+      tag: { isOpen: false, tagTitle: "Download Now", tagColor: "bg-sky-600" },
+    },
+    {
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello there...!!",
+      fileSize: ".4mb",
+      close: false,
+      tag: { isOpen: false, tagTitle: "Download Now", tagColor: "bg-sky-600" },
+    },
   ];
 
   return (

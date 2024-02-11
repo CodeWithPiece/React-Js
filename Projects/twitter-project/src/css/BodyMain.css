@@ -1,0 +1,10 @@
+.body-container {
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 100%;
+    border: 1px solid var(--light-grey);
+    padding: 10px;
+  }
+  
