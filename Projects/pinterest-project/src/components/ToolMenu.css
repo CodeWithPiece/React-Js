@@ -1,0 +1,29 @@
+#tool-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tool-menu .tool-icon {
+  font-size: 45px;
+  padding: 0px 10px;
+  border-radius: 50px;
+  color: grey;
+}
+
+.tool-icon:hover {
+  background-color: var(--light-grey-color);
+  cursor: pointer;
+}
+
+#tool-menu #down-arrow {
+  font-size: 30px;
+  color: grey;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+#down-arrow:hover {
+  background-color: var(--light-grey-color);
+  cursor: pointer;
+}

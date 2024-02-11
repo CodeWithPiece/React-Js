@@ -1,0 +1,25 @@
+.card {
+  padding: 0;
+  margin: 7px 7px;
+  overflow: hidden;
+  border-radius: var(--card_border_radius);
+  background-color: var(--light-grey-color);
+}
+
+.card_small {
+  grid-row-end: span var(--card_small);
+}
+
+.card_medium {
+  grid-row-end: span var(--card_med);
+}
+
+.card_large {
+  grid-row-end: span var(--card_large);
+}
+
+#img-pin {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

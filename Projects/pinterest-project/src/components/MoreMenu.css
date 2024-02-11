@@ -1,0 +1,17 @@
+#menu-more {
+  background-color: white;
+  height: 55px;
+  width: 55px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 50px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 25px;
+  right: 25px;
+}
+
+#menu-more:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+#nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-menu #logo {
+  font-size: 45px;
+  color: rgb(237, 0, 0);
+  padding: 0px 10px;
+  border-radius: 50px;
+}
+
+#nav-menu h1 {
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  padding: 12px 15px;
+  border-radius: 50px;
+}
+
+#nav-menu #menu-home {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+#nav-menu #menu-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+#nav-menu h1:hover,
+#nav-menu #logo:hover {
+  background-color: var(--light-grey-color);
+  cursor: pointer;
+}
