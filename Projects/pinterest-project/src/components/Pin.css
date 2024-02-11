@@ -2,7 +2,7 @@
   padding: 0;
   margin: 7px 7px;
   overflow: hidden;
-  border-radius: var(--card_border_radius);
+  border-radius: 15px;
   background-color: var(--light-grey-color);
 }
 

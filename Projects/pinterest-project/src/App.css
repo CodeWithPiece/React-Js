@@ -1,0 +1,8 @@
+:root {
+  --light-grey-color: rgb(237, 237, 237);
+  --card_width: 250px;
+  --row_increment: 10px;
+  --card_small: 30;
+  --card_med: 40;
+  --card_large: 50;
+}
