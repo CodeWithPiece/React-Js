@@ -39,7 +39,6 @@ const server = app.listen(PORT, () => {
 const io = socket(server, {
   cors: {
     origin: "http://localhost:5173/",
-    methods: ["GET", "POST"],
     credentials: true,
   },
 });
@@ -49,6 +48,8 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
-  console.log(`Id: ${socket.id}`);
+  console.log(`User connected: ${socket.id}`);
+  socket.on('disconnect', () => {
+    console.log(`User disconnected: ${socket.id}`);
+  });
 });
