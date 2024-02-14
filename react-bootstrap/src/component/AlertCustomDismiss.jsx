@@ -3,7 +3,7 @@ import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 
 const AlertCustomDismiss = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const handleClick = (value) => {
     setShow(value);
