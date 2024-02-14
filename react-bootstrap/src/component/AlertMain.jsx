@@ -3,6 +3,7 @@ import AlertBasic from "./AlertBasic";
 import AlertLink from "./AlertLink";
 import AlertContent from "./AlertContent";
 import AlertDismiss from "./AlertDismiss";
+import AlertCustomDismiss from "./AlertCustomDismiss";
 
 const AlertMain = () => {
   return (
@@ -11,6 +12,7 @@ const AlertMain = () => {
       <AlertLink />
       <AlertContent />
       <AlertDismiss />
+      <AlertCustomDismiss />
     </>
   );
 };
