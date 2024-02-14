@@ -6,6 +6,9 @@ import BreadCrumbs from "./component/BreadCrumbs";
 import CarouselMain from "./component/CarouselMain";
 import "./App.css";
 import DropDownMain from "./component/DropDownMain";
+import FigureMain from "./component/FigureMain";
+import ImageMain from "./component/ImageMain";
+import ModalMain from "./component/ModalMain";
 
 const App = () => {
   return (
@@ -15,7 +18,10 @@ const App = () => {
       {/* <BadgeMain /> */}
       {/* <BreadCrumbs /> */}
       {/* <CarouselMain /> */}
-      <DropDownMain />
+      {/* <DropDownMain /> */}
+      {/* <FigureMain /> */}
+      {/* <ImageMain /> */}
+      <ModalMain />
     </>
   );
 };
