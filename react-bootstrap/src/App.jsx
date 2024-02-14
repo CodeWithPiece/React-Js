@@ -5,6 +5,7 @@ import BadgeMain from "./component/BadgeMain";
 import BreadCrumbs from "./component/BreadCrumbs";
 import CarouselMain from "./component/CarouselMain";
 import "./App.css";
+import DropDownMain from "./component/DropDownMain";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
       {/* <AlertMain /> */}
       {/* <BadgeMain /> */}
       {/* <BreadCrumbs /> */}
-      <CarouselMain />
+      {/* <CarouselMain /> */}
+      <DropDownMain />
     </>
   );
 };
