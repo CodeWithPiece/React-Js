@@ -35,19 +35,13 @@ const Note = () => {
 
                     <ul className="dropdown-menu dropdown-menu-end">
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Action
-                        </a>
+                        <p className="dropdown-item">Action</p>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Another action
-                        </a>
+                        <p className="dropdown-item">Action</p>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Something else here
-                        </a>
+                        <p className="dropdown-item">Action</p>
                       </li>
                     </ul>
                   </div>
