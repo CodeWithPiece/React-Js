@@ -1,0 +1,47 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form-note {
+  width: 40%;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px solid var(--secondary-grey);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#form-note input {
+  width: 100%;
+  border: 0;
+  margin-right: 5px;
+}
+
+#form-note input:focus {
+  outline: none;
+}
+
+#form-note span {
+  background-color: var(--secondary-grey);
+  padding: 2px 8px 5px 8px;
+  border-radius: 8px;
+  color: black;
+}
+
+#footer p {
+  margin: 6px;
+  font-size: 12px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+  #form-note {
+    width: 80%;
+  }
+}
