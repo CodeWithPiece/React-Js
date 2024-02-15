@@ -1,0 +1,58 @@
+#card-main {
+  margin: 10px 0px;
+}
+
+#card-data p {
+  margin-bottom: 0;
+}
+
+#div-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+#div-title-content {
+  display: flex;
+  align-items: center;
+}
+
+#date-container {
+  padding: 5px 10px;
+  background-color: var(--secondary-grey);
+  border-radius: 5px;
+}
+
+#day {
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 0px;
+  color: rgb(105, 100, 100);
+}
+
+#time {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+#date,
+#title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+#title-container:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+#more {
+  padding: 2px 4px 5px 4px;
+  border-radius: 50px;
+}
+
+#more:hover {
+  background-color: var(--secondary-grey);
+  cursor: pointer;
+}
