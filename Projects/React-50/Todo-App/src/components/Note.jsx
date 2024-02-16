@@ -4,7 +4,6 @@ import { MdMoreHoriz } from "react-icons/md";
 import "./Note.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import Dropdown from "react-bootstrap/Dropdown";
 
 const Note = () => {
   return (
