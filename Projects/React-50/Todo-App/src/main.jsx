@@ -4,9 +4,21 @@ import App from "./App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Login from "./components/Login.jsx";
+import SignUp from "./components/SignUp.jsx";
+import NotFound from "./components/NotFound.jsx";
+
+const router = createBrowserRouter([
+  { path: "/", element: <Login /> },
+  { path: "/register", element: <SignUp /> },
+  { path: "/home", element: <App /> },
+  { path: "*", element: <NotFound /> },
+  { path: "/not-found", element: <NotFound /> },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
