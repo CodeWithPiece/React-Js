@@ -36,6 +36,11 @@
   color: black;
 }
 
+#form-note span:hover {
+  background-color: var(--dark-grey);
+  cursor: pointer;
+}
+
 #footer p {
   margin: 6px;
   font-size: 12px;

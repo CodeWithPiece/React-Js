@@ -18,15 +18,7 @@
   padding: 3px 10px 7px 10px;
 }
 
-#navbar span {
-  border: 1px solid var(--dark-grey);
-  padding: 3px 10px 7px 10px;
-  border-radius: 8px;
-  color: black;
-}
-
-#navbar p:hover,
-span:hover {
-  background-color: var(--light-grey);
+#navbar p:hover{
   cursor: pointer;
+  background-color: var(--light-grey);
 }
