@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Login.css";
 import Navbar from "./Navbar";
-import { Link, redirect } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const email = useRef();
+  const password = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(email.current.value, password.current.value);
+    localStorage.setItem("email", email.current.value);
+    navigate("/home");
+  };
+
   return (
     <>
       <Navbar />
       <div id="login-container">
         <div className="form-container">
           <div className="logo-container">Log In</div>
-          <form className="form">
+          <form
+            className="form"
+            onSubmit={(event) => {
+              handleSubmit(event);
+            }}
+          >
             <div className="form-group">
               <input
                 type="text"
                 id="email"
                 name="email"
+                ref={email}
                 placeholder="Email"
                 required={true}
               />
@@ -23,6 +40,7 @@ const Login = () => {
                 type="password"
                 id="password"
                 name="password"
+                ref={password}
                 placeholder="Password"
                 required={true}
               />
@@ -48,9 +66,9 @@ const Login = () => {
 export default Login;
 
 export const isLoggedIn = () => {
-  const name = localStorage.getItem("name");
+  const email = localStorage.getItem("email");
   console.log(`Checking Login...!!`);
-  if (name === null || name === "") {
+  if (email === null || email === "") {
     return null;
   }
   return redirect("/home");

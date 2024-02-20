@@ -19,9 +19,9 @@ function App() {
 export default App;
 
 export const checkAuthentication = () => {
-  const name = localStorage.getItem("name");
+  const email = localStorage.getItem("email");
   console.log(`Checking Authentication...!!`);
-  if (name === null || name === '') {
+  if (email === null || email === '') {
     return redirect("/");
   }
   return null;
