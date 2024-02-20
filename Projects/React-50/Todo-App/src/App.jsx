@@ -22,7 +22,7 @@ export const checkAuthentication = () => {
   const name = localStorage.getItem("name");
   console.log(`Checking Authentication...!!`);
   if (name === null || name === '') {
-    return redirect("/not-found");
+    return redirect("/");
   }
   return null;
 };

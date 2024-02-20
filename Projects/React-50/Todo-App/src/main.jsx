@@ -5,12 +5,12 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "./components/Login.jsx";
+import Login, { isLoggedIn } from "./components/Login.jsx";
 import SignUp from "./components/SignUp.jsx";
 import NotFound from "./components/NotFound.jsx";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Login /> },
+  { path: "/", element: <Login />, loader: isLoggedIn },
   { path: "/register", element: <SignUp /> },
   { path: "/home", element: <App />, loader: checkAuthentication },
   { path: "*", element: <NotFound /> },

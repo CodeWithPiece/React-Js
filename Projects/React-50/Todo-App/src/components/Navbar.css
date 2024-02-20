@@ -15,7 +15,12 @@
   font-weight: 600;
   margin-bottom: 0px;
   border-radius: 8px;
+  color: black;
   padding: 3px 10px 7px 10px;
+}
+
+#link{
+  text-decoration: none;
 }
 
 #navbar p:hover{

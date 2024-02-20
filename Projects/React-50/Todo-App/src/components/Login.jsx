@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import Navbar from "./Navbar";
+import { Link, redirect } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -16,14 +17,14 @@ const Login = () => {
                 id="email"
                 name="email"
                 placeholder="Email"
-                required="true"
+                required={true}
               />
               <input
                 type="password"
-                id="email"
+                id="password"
                 name="password"
                 placeholder="Password"
-                required="true"
+                required={true}
               />
             </div>
 
@@ -34,9 +35,9 @@ const Login = () => {
 
           <p className="signup-link">
             Don't have an account?{" "}
-            <a href="#" className="signup-link link">
+            <Link className="signup-link link" to={"/register"}>
               Create account
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -45,3 +46,12 @@ const Login = () => {
 };
 
 export default Login;
+
+export const isLoggedIn = () => {
+  const name = localStorage.getItem("name");
+  console.log(`Checking Login...!!`);
+  if (name === null || name === "") {
+    return null;
+  }
+  return redirect("/home");
+};
