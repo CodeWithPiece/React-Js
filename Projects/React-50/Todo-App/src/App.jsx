@@ -2,6 +2,7 @@ import "./App.css";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import { redirect } from "react-router-dom";
 
 function App() {
   return (
@@ -16,3 +17,12 @@ function App() {
 }
 
 export default App;
+
+export const checkAuthentication = () => {
+  const name = localStorage.getItem("name");
+  console.log(`Checking Authentication...!!`);
+  if (name === null || name === '') {
+    return redirect("/not-found");
+  }
+  return null;
+};

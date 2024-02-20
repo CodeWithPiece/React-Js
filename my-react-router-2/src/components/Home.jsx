@@ -46,6 +46,7 @@ export const getProducts = async () => {
       return res.data.products;
     } catch (error) {
       console.log(error);
+      return [];
     }
   } finally {
     console.log("Fetch executed...!!");

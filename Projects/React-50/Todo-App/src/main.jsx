@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import App, { checkAuthentication } from "./App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -12,7 +12,7 @@ import NotFound from "./components/NotFound.jsx";
 const router = createBrowserRouter([
   { path: "/", element: <Login /> },
   { path: "/register", element: <SignUp /> },
-  { path: "/home", element: <App /> },
+  { path: "/home", element: <App />, loader: checkAuthentication },
   { path: "*", element: <NotFound /> },
   { path: "/not-found", element: <NotFound /> },
 ]);
