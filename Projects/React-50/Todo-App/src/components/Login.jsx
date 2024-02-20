@@ -1,9 +1,43 @@
-import React from 'react'
+import React from "react";
+import "./Login.css";
 
 const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <div id="login-container">
+      <div className="form-container">
+        <div className="logo-container">Log In</div>
+        <form className="form">
+          <div className="form-group">
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required="true"
+            />
+            <input
+              type="password"
+              id="email"
+              name="password"
+              placeholder="Password"
+              required="true"
+            />
+          </div>
 
-export default Login
+          <button className="form-submit-btn" type="submit">
+            Log In
+          </button>
+        </form>
+
+        <p className="signup-link">
+          Don't have an account?{" "}
+          <a href="#" className="signup-link link">
+            Create account
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
