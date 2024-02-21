@@ -56,3 +56,12 @@
   background-color: var(--secondary-grey);
   cursor: pointer;
 }
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:active {
+  background-color: var(--light-grey) !important;
+  color: black !important;
+}

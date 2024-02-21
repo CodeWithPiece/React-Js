@@ -34,13 +34,10 @@ const Note = () => {
 
                     <ul className="dropdown-menu dropdown-menu-end">
                       <li>
-                        <p className="dropdown-item">Action</p>
+                        <p className="dropdown-item">Edit</p>
                       </li>
                       <li>
-                        <p className="dropdown-item">Action</p>
-                      </li>
-                      <li>
-                        <p className="dropdown-item">Action</p>
+                        <p className="dropdown-item">Delete</p>
                       </li>
                     </ul>
                   </div>
