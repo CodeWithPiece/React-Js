@@ -6,9 +6,14 @@ const productSlice = createSlice({
   reducers: {
     addAll: (state, action) => {
       let newState = state;
-      return (newState = action.payload.productsData);
+      return newState.concat(action.payload.productsData);
     },
-    remove: () => {},
+    remove: (state, action) => {
+      let newState = state;
+      return newState.filter((product) => {
+        return action.payload.product.id != product.id;
+      });
+    },
   },
 });
 
