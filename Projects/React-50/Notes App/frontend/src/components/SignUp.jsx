@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import "./SignUp.css";
 import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { doSignUp } from "../api/ServiceApi";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -15,8 +16,12 @@ const SignUp = () => {
       nameRef.current.value,
       emailRef.current.value,
       passwordRef.current.value,
-      (res) => {
-        console.log(res);
+      (res, err) => {
+        if (res) {
+          navigate("/");
+        } else {
+          console.log(err);
+        }
       }
     );
     nameRef.current.value = "";

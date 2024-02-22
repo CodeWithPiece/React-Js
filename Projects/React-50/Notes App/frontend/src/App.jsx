@@ -23,7 +23,7 @@ export default App;
 export const checkAuthentication = () => {
   const email = localStorage.getItem("email");
   console.log(`Checking Authentication...!!`);
-  if (email === null || email === "") {
+  if (email === null || email === "" || email === undefined) {
     return redirect("/");
   }
   return null;

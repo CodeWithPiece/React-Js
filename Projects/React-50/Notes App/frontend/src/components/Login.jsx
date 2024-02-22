@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "./Login.css";
 import Navbar from "./Navbar";
 import { Link, redirect, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { doLogin } from "../api/ServiceApi";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,20 +11,16 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(email.current.value, password.current.value);
-    // localStorage.setItem("email", email.current.value);
-    // navigate("/home");
-    axios
-      .get("http://localhost:8080/notes-app/api/v1/")
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
-      });
+    doLogin(email.current.value, password.current.value, (res, err) => {
+      if (res) {
+        localStorage.setItem("id", res.personId);
+        localStorage.setItem("name", res.personName);
+        localStorage.setItem("email", res.personEmail);
+        navigate("/home");
+      } else {
+        console.log(err);
+      }
+    });
   };
 
   return (
@@ -80,7 +76,7 @@ export default Login;
 export const isLoggedIn = () => {
   const email = localStorage.getItem("email");
   console.log(`Checking Login...!!`);
-  if (email === null || email === "") {
+  if (email === null || email === "" || email === undefined) {
     return null;
   }
   return redirect("/home");
