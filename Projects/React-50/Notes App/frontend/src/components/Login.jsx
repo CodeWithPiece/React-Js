@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./Login.css";
 import Navbar from "./Navbar";
 import { Link, redirect, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,9 +11,20 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(email.current.value, password.current.value);
-    localStorage.setItem("email", email.current.value);
-    navigate("/home");
+    // console.log(email.current.value, password.current.value);
+    // localStorage.setItem("email", email.current.value);
+    // navigate("/home");
+    axios
+      .get("http://localhost:8080/notes-app/api/v1/")
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
   };
 
   return (
