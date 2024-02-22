@@ -8,7 +8,7 @@
 }
 
 .form-container {
-  width: 380px;
+  max-width: 380px;
   background-color: #fff;
   padding: 32px 24px;
   font-size: 14px;
@@ -81,4 +81,10 @@
 
 .form-container .signup-link .link {
   font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-container{
+    max-width: 300px;
+  }
 }
