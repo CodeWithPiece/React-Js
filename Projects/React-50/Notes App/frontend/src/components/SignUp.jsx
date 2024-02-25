@@ -18,15 +18,15 @@ const SignUp = () => {
       passwordRef.current.value,
       (res, err) => {
         if (res) {
+          nameRef.current.value = "";
+          emailRef.current.value = "";
+          passwordRef.current.value = "";
           navigate("/");
         } else {
           console.log(err);
         }
       }
     );
-    nameRef.current.value = "";
-    emailRef.current.value = "";
-    passwordRef.current.value = "";
   };
 
   return (
@@ -59,7 +59,6 @@ const SignUp = () => {
                 ref={passwordRef}
               />
             </div>
-
             <button className="form-submit-btn" type="submit">
               Create Account
             </button>

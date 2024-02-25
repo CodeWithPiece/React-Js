@@ -18,6 +18,7 @@ export const doSignUp = (name, email, password, callback) => {
       }
     )
     .then(function (response) {
+      console.log(data);
       callback(response.data.data, null);
     })
     .catch(function (error) {

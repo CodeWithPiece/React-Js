@@ -46,7 +46,13 @@ const Note = () => {
             </div>
             <p className="mt-3">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
-              doloremque voluptates expedita.
+              doloremque voluptates expedita. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Corporis laborum nostrum consectetur
+              nulla rem. Minus, totam eaque voluptatum natus odio doloremque,
+              perspiciatis dolorum ipsam atque nesciunt porro possimus veniam
+              eius, rerum aliquid expedita provident et rem facilis. Maiores
+              voluptatum similique, hic, adipisci tempora id ratione ducimus
+              enim minima labore cumque.
             </p>
           </div>
         </Card.Body>
