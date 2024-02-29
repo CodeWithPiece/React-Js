@@ -30,7 +30,7 @@ public class PersonServiceImpl implements PersonService {
         try {
             return personRepository.save(person);
         } catch (Exception e) {
-            throw new Exception(personEmail + " already exist, please try different email.");
+            throw new Exception(personEmail + " already exist, please try different email...!!");
         }
     }
 

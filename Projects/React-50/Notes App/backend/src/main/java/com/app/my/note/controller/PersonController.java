@@ -33,7 +33,6 @@ public class PersonController {
     public ResponseEntity<?> savePerson(@RequestParam(name = "personName") String personName
             , @RequestParam(name = "personEmail") String personEmail
             , @RequestParam(name = "personPassword") String personPassword) throws Exception {
-
         Person person = personService.savePerson(personName, personEmail, personPassword);
         Map<String, Object> map = new HashMap<>();
         map.put("status", true);
