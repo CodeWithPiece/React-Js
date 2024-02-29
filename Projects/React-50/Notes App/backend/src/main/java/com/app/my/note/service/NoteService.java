@@ -12,4 +12,6 @@ public interface NoteService {
 
     Note updateNote(Long personId, Long noteId, String noteDescription) throws Exception;
 
+    Note deleteNote(Long personId, Long noteId) throws Exception;
+
 }

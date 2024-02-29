@@ -55,4 +55,15 @@ public class NoteController {
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
+    @DeleteMapping("/note/person")
+    public ResponseEntity<?> deleteNote(@RequestParam(name = "personId") String personId,
+                                        @RequestParam(name = "noteId") String noteId) throws Exception {
+        Note note = noteService.deleteNote(Long.valueOf(personId), Long.valueOf(noteId));
+        Map<String, Object> map = new HashMap<>();
+        map.put("status", true);
+        map.put("message", "Note deleted successfully...!!");
+        map.put("data", note);
+        return new ResponseEntity<>(map, HttpStatus.OK);
+    }
+
 }

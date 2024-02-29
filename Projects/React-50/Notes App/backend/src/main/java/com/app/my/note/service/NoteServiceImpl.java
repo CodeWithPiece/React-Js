@@ -80,5 +80,24 @@ public class NoteServiceImpl implements NoteService {
         }
     }
 
+    @Override
+    public Note deleteNote(Long personId, Long noteId) throws Exception {
+        Optional<Person> optionalPerson = personRepository.findById(personId);
+        if (optionalPerson.isPresent()) {
+            Optional<Note> optionalNote = noteRepository.findById(noteId);
+            if (optionalNote.isPresent()) {
+                try {
+                    noteRepository.deleteById(noteId);
+                    return optionalNote.get();
+                } catch (Exception e) {
+                    throw new Exception("Internal server error...!!");
+                }
+            } else {
+                throw new Exception("Note with noteId: " + noteId + " not found...!!");
+            }
+        } else {
+            throw new Exception("Person with personId: " + personId + " not found...!!");
+        }
+    }
 
 }
